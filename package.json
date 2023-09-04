@@ -2,6 +2,9 @@
   "name": "privy-xmtp-ts-demo",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@privy-io/react-auth": "^1.35.1",
     "@testing-library/jest-dom": "^5.17.0",

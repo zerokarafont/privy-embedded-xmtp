@@ -3,13 +3,30 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { PrivyProvider } from '@privy-io/react-auth';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <PrivyProvider 
+        appId="clm4c6m5q018el20fe3zw1hwp"
+        config={{
+          appearance: {
+            accentColor:"#6A6FF5",
+            theme:"#FFFFFF",
+            showWalletLoginFirst: true,
+            logo:"https://xmtp.org/img/logomark.svg"
+          },
+          loginMethods:["wallet", "email", "google", "twitter", "discord", "github"],
+          embeddedWallets:{
+            createOnLogin:"users-without-wallets",
+            requireUserPasswordOnCreate:false
+          },
+        }}>
+      <App />
+    </PrivyProvider>
   </React.StrictMode>
 );
 
